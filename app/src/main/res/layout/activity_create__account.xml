@@ -16,7 +16,7 @@
         android:layout_marginTop="24dp"
 
         android:fontFamily="@font/museosansb"
-        android:text="Create an account"
+        android:text="@string/create_an_account"
         android:textColor="#FFF"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/museosanss"
-        android:text="Email Address"
+        android:text="@string/email_address"
 
         android:textColor="#FFF"
         android:textSize="30sp"
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/museosanss"
-        android:text="Create password"
+        android:text="@string/create_password"
 
         android:textColor="#FFF"
         android:textSize="30sp"
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/museosanss"
-        android:text="Repeat password"
+        android:text="@string/repeat_password"
         android:textColor="#FFF"
 
         android:textSize="30sp"
@@ -114,7 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="One of the passwords you\nentered wasn't valid"
+        android:text="@string/one_of_the_passwords_you_nentered_wasn_t_valid"
         android:textColor="#FFF"
 
 
@@ -154,7 +154,7 @@
         android:layout_marginBottom="52dp"
 
 
-        android:text="Your password should have a minimum of 8\ncharacters and contain at least one \nnumber, one uppercase andone lower \ncase letter. You can use special characters."
+        android:text="@string/your_password_should_have_a_minimum_of_8_ncharacters_and_contain_at_least_one_nnumber_one_uppercase_andone_lower_ncase_letter_you_can_use_special_characters"
         android:textColor="#FFF"
         app:layout_constraintBottom_toTopOf="@+id/btn_next"
         app:layout_constraintEnd_toEndOf="parent"
@@ -167,7 +167,7 @@
         android:layout_height="55sp"
         android:background="@drawable/gradient_button_background"
 
-        android:text="Next"
+        android:text="@string/next"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

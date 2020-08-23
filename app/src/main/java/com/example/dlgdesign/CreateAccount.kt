@@ -10,6 +10,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_create__account.*
 
+
+var email = ArrayList<String>()
+
 class CreateAccount : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,83 +22,64 @@ class CreateAccount : AppCompatActivity() {
         Log.d(PWMONITOR, et_Create_Password.text.toString())
 
 
+
+
         btn_next.setOnClickListener {
 
             Log.d(PWERROR, "Click started")
             if(pwCheck()) {
                 Log.d(PWERROR, "Check was successful")
                 if (pwValidation(et_Confirm_Password.text.toString())) {
-                    Log.d(PWERROR, "Validaion was successful")
-                    passwordExcepted()
+
+                    if(!emaiAlreadyUsed()) {
+                        Log.d(PWERROR, "Validaion was successful")
+                        email.add(et_Email_Address.text.toString())
+
+                        prompt_Password_Incorrect.visibility = View.INVISIBLE
+                        iv_Password_Did_Not_Match.visibility = View.INVISIBLE
+
+                        passwordExcepted()
+                    }
                 }
-                if (!pwValidation(et_Create_Password.text.toString()))
+                if (!pwValidation(et_Create_Password.text.toString())) {
                     Log.d(PWERROR, "validation not successful")
+                    prompt_Password_Incorrect.visibility = View.VISIBLE
+                    iv_Password_Did_Not_Match.visibility = View.VISIBLE
+                }
             }
             if(!pwCheck())
                 Log.d(PWERROR,"Check was not successful")
             prompt_Password_Incorrect.visibility = View.VISIBLE
-
-
-            /**
-             *
-            if(pwCheck() && pwValidation(et_Confirm_Password.text.toString())) {
-                Log.d(PWERROR, "Validation was successful")
-                passwordExcepted()
-            }
-            else {
-                Log.d(PWERROR, "Check was not successful")
-                prompt_Password_Incorrect.visibility = View.VISIBLE
-            }
+            iv_Password_Did_Not_Match.visibility = View.VISIBLE
 
 
 
-            Log.d(PWERROR, "Click started")
-            if(pwCheck())
-                Log.d(PWERROR, "Check was successful")
-                if (pwValidation(et_Confirm_Password.text.toString()))
-                    Log.d(PWERROR,"Validaion was successful")
-                    passwordExcepted()
-
-            if(!pwCheck())
-                Log.d(PWERROR,"Check was not successful")
-                prompt_Password_Incorrect.visibility = View.VISIBLE
-
-
-
-            if(pwCheck() && pwValidation(et_Confirm_Password.text.toString())) {
-                Log.d(PWERROR, "Validation was successful")
-                passwordExcepted()
-            }
-            else {
-                Log.d(PWERROR, "Check was not successful")
-                prompt_Password_Incorrect.visibility = View.VISIBLE
-            }
-
-
-
-            if(pwCheck()){
-                Log.d(PWERROR,"pwCheck successful")
-                if(pwValidation(et_Confirm_Password.text.toString())){
-                    Log.d(PWERROR,"pwValidation successful")
-                    passwordExcepted()
-                }
-            }
-
-            else if (!pwCheck()){
-                Log.d(PWERROR,"pwCheck was not successful")
-                if (pwValidation(et_Confirm_Password.text.toString())){
-                    Log.d(PWERROR,"pwValidation was not successful")
-                    passwordUnsuccessful()
-                }
-            }
-
-
-            */
         }
 
 
 
     }
+
+    private fun emaiAlreadyUsed():Boolean{
+
+        var r = false
+
+        for (i in email){
+
+
+            if(i == et_Email_Address.text.toString()){
+
+                Log.d(PWERROR, "Email Already Used")
+                prompt_Password_Incorrect.visibility = View.VISIBLE
+                iv_Password_Did_Not_Match.visibility = View.VISIBLE
+                r = true
+                break
+            }
+        }
+
+        return r
+    }
+
 
     private fun passwordUnsuccessful() {
         intent = Intent(this,CreateAccount::class.java)
