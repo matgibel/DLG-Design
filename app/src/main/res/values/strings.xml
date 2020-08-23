@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DLGDesign</string>
+    <string name="car_health_updates_nrequest_a_rescue_online_npolicy_information">Car health updates \nRequest a rescue online \nPolicy information</string>
+    <string name="greenflag_customers_can_ncreate_an_account_to_access">GreenFlag customers can \ncreate an account to access</string>
+</resources>

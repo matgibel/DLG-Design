@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateAccount"
+    android:background="#000"
+    >
+
+
+    <TextView
+        android:id="@+id/prompt_Create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+
+        android:fontFamily="@font/museosansb"
+        android:text="Create an account"
+        android:textColor="#FFF"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/prompt_Email_Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/museosanss"
+        android:text="Email Address"
+
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prompt_Create" />
+
+
+    <EditText
+        android:id="@+id/et_Email_Address"
+        android:layout_width="300sp"
+
+        android:layout_height="50sp"
+
+        android:layout_marginTop="12dp"
+        android:background="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prompt_Email_Address" />
+
+
+    <TextView
+        android:id="@+id/prompt_Create_Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/museosanss"
+        android:text="Create password"
+
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.227"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_Email_Address" />
+
+    <EditText
+        android:id="@+id/et_Create_Password"
+        android:layout_width="300sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="12dp"
+        android:background="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prompt_Create_Password" />
+
+
+    <TextView
+        android:id="@+id/prompt_Repeat_Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/museosanss"
+        android:text="Repeat password"
+        android:textColor="#FFF"
+
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_Create_Password" />
+
+    <EditText
+        android:id="@+id/et_Confirm_Password"
+        android:layout_width="300sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="12dp"
+
+
+        android:background="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prompt_Repeat_Password" />
+
+
+    <TextView
+        android:id="@+id/prompt_Password_Incorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="One of the passwords you\nentered wasn't valid"
+        android:textColor="#FFF"
+
+
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_MinReq"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.323"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_Confirm_Password"
+        app:layout_constraintVertical_bias="0.0"
+
+        android:visibility="invisible"
+
+        />
+
+    <ImageView
+        android:id="@+id/iv_Password_Did_Not_Match"
+        android:layout_width="0dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/cross"
+        app:layout_constraintStart_toEndOf="@+id/prompt_Password_Incorrect"
+        app:layout_constraintTop_toBottomOf="@+id/et_Confirm_Password"
+
+        android:visibility="invisible"
+
+        />
+
+
+    <TextView
+        android:id="@+id/tv_MinReq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
+
+
+        android:text="Your password should have a minimum of 8\ncharacters and contain at least one \nnumber, one uppercase andone lower \ncase letter. You can use special characters."
+        android:textColor="#FFF"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="330sp"
+        android:layout_height="55sp"
+        android:background="@drawable/gradient_button_background"
+
+        android:text="Next"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
